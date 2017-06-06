@@ -13,6 +13,7 @@ class CommonStatistic(mongodb.Document):
 
     register_count = mongodb.IntField(required=False)
     authorize_count = mongodb.IntField(required=False)
-    trade_count = mongodb.IntField(required=False)
+    order_count = mongodb.IntField(required=False)
+    payment_count = mongodb.FloatField(required=False)
 
     meta = {'collection': 'common_statistics'}
