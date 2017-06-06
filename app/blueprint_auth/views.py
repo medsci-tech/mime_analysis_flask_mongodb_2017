@@ -59,4 +59,3 @@ def sms_code(phone):
     user.save()
     ret = {'result': 'success'}
     return json.dumps(ret)
-
