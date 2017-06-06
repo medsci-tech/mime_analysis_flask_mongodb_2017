@@ -1,5 +1,6 @@
 from flask import Flask
 
+from .models import mongodb
 from .config import configs
 from .vendors import bcrypt
 
@@ -11,6 +12,7 @@ def create_app(config_name):
     app.config.from_object(configs[config_name])
 
     # init vendors here.
+    mongodb.init_app(app)
     bcrypt.init_app(app)
 
     # register blueprints here.
