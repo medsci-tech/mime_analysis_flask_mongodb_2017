@@ -5,6 +5,7 @@ from .config import configs
 from .vendors import bcrypt
 
 from .blueprint_auth import blueprint_auth
+from .blueprint_time import blueprint_time
 
 
 def create_app(config_name):
@@ -17,5 +18,6 @@ def create_app(config_name):
 
     # register blueprints here.
     app.register_blueprint(blueprint_auth)
+    app.register_blueprint(blueprint_time)
 
     return app

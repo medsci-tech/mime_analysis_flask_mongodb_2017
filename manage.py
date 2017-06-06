@@ -11,11 +11,6 @@ app = create_app('development')
 manager = Manager(app=app)
 
 
-@manager.command
-def hello():
-    print('Hello Flask!')
-
-
 @app.before_request
 def check_user():
     if 'user_phone' in session:
