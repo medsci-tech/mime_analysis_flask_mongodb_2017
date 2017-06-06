@@ -1,7 +1,7 @@
 from . import mongodb
 
 
-class CommonStatistic(mongodb.Document):
+class CommonStatistic(mongodb.DynamicDocument):
     province = mongodb.StringField(required=True)
     city = mongodb.StringField(required=False)
     longitude = mongodb.FloatField(required=False)
