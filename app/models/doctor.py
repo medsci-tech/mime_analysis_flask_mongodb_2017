@@ -1,7 +1,7 @@
 from . import mongodb
 
 
-class Hospital(mongodb.DynamicDocument):
+class Hospital(mongodb.Document):
     name = mongodb.StringField(required=False)
     level = mongodb.StringField(required=False)
     province = mongodb.StringField(required=True)
