@@ -1,5 +1,4 @@
 import datetime
-
 from . import mongodb
 from ..vendors import bcrypt
 
