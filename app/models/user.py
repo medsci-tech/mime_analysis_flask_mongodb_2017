@@ -20,4 +20,3 @@ class User(mongodb.Document):
     def check_password(self, password):
         ret = bcrypt.check_password_hash(self.password, password)
         return ret
-

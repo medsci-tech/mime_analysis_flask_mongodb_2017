@@ -45,17 +45,17 @@ def register():
 def sms_code(phone):
     user = User.objects(phone=phone).first()
     if not user:
-        ret = {'result': 'error'}
+        ret = {'error': 'user not existed'}
         return json.dumps(ret)
 
     code = generate_code()
     ret = send_sms_code(phone, code)
     if not ret:
-        ret = {'result': 'error'}
+        ret = {'error': 'sms code failed'}
         return json.dumps(ret)
 
     user.sms_code = code
     user.updated_at = datetime.datetime.now()
     user.save()
-    ret = {'result': 'success'}
+    ret = {'error': ''}
     return json.dumps(ret)
