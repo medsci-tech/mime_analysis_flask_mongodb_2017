@@ -1,15 +1,5 @@
 from . import mongodb
-
-
-class Hospital(mongodb.Document):
-    name = mongodb.StringField(required=False)
-    level = mongodb.StringField(required=False)
-    province = mongodb.StringField(required=True)
-    city = mongodb.StringField(required=False)
-    longitude = mongodb.FloatField(required=False)
-    latitude = mongodb.FloatField(required=False)
-
-    meta = {'collection': 'hospitals'}
+from . import Hospital
 
 
 class Doctor(mongodb.DynamicDocument):
@@ -29,6 +19,6 @@ class Doctor(mongodb.DynamicDocument):
 
     doctor_title = mongodb.StringField(required=False)
     doctor_office = mongodb.StringField(required=False)
-    hospital = mongodb.ReferenceField(Hospital)
+    hospital = mongodb.ReferenceField(Hospital, required=False)
 
     meta = {'collection': 'doctors'}

@@ -5,5 +5,5 @@ mongodb = MongoEngine()
 # otherwise, your models won't be detected by migrate.
 from .user import User
 from .common_statistic import CommonStatistic
-from .doctor import Hospital
+from .hospital import Hospital
 from .doctor import Doctor

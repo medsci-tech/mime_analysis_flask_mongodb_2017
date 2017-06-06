@@ -16,8 +16,8 @@ class DevelopmentConfig(Config):
         'db': 'development_mongodb',
         'host': 'localhost',
         'port': 27017,
-        'username': 'root',
-        'password': 'root'
+        'username': 'test_admin',
+        'password': 'test_admin'
     }
 
 
