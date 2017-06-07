@@ -7,3 +7,4 @@ blueprint_main = Blueprint('blueprint_main',
 
 from . import doctor_views
 from . import city_views
+
