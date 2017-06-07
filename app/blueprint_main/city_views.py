@@ -2,7 +2,7 @@ import datetime
 import json
 
 from . import blueprint_main
-from ..models import Doctor
+from ..models import CityStatistic
 
 
 @blueprint_main.route('/months/<int:year>', methods=['GET', 'POST'])
