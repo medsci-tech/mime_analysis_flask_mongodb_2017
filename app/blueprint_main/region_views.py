@@ -7,10 +7,14 @@ from ..models import CityStatistic
 @blueprint_main.route('/regions/', methods=['GET', 'POST'])
 def regions():
     group_region_doc = {'$group': {
-        '_id': {'city': '$city'},
+        '_id': {'city': '$city',
+                'longitude': '$longitude',
+                'latitude': '$latitude'},
         'count': {'$sum': '$register_count'}}}
     project_region_doc = {'$project': {
         'role': '$_id.city',
+        'longitude': '$_id.longitude',
+        'latitude': '$_id.latitude',
         'count': 1,
         '_id': 0}}
     aggregate_list = list()
@@ -18,6 +22,4 @@ def regions():
     aggregate_list.append(project_region_doc)
     ret = CityStatistic.objects().aggrate(*aggregate_list)
     return json.dumps(ret)
-
-
 

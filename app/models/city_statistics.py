@@ -1,9 +1,11 @@
 from . import mongodb
-from . import City
 
 
 class CityStatistic(mongodb.Document):
-    city = mongodb.ReferenceField(City)
+    province = mongodb.StringField(required=True)
+    city = mongodb.StringField(required=False)
+    longitude = mongodb.FloatField(required=False)
+    latitude = mongodb.FloatField(required=False)
 
     year = mongodb.IntField(required=False)
     month = mongodb.IntField(required=False)
