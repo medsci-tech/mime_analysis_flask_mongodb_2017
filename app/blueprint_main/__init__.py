@@ -5,4 +5,5 @@ blueprint_main = Blueprint('blueprint_main',
                            url_prefix='/main',
                            template_folder='../templates/main')
 
-from . import views
+from . import doctor_views
+from . import city_views
