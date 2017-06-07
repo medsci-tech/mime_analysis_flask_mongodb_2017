@@ -1,4 +1,5 @@
 from flask_mongoengine import MongoEngine
+
 mongodb = MongoEngine()
 
 # import your models here,
@@ -8,3 +9,4 @@ from .city import City
 from .city_statistics import CityStatistic
 from .hospital import Hospital
 from .doctor import Doctor
+

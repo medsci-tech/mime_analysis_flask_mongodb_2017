@@ -11,12 +11,10 @@ class User(mongodb.Document):
 
     meta = {'collection': 'users'}
 
-    def __repr__(self):
-        return '<User {}>'.format(self.phone)
-
     def set_password(self, password):
         self.password = bcrypt.generate_password_hash(password)
 
     def check_password(self, password):
         ret = bcrypt.check_password_hash(self.password, password)
         return ret
+

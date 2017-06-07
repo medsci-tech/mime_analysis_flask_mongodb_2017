@@ -8,3 +8,4 @@ class Hospital(mongodb.Document):
     city = mongodb.ReferenceField(City)
 
     meta = {'collection': 'hospitals'}
+

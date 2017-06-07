@@ -8,3 +8,4 @@ class City(mongodb.Document):
     latitude = mongodb.FloatField(required=False)
 
     meta = {'collection': 'cities'}
+
