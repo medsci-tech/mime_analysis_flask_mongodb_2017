@@ -1,5 +1,4 @@
 import json
-import datetime
 from flask import render_template
 
 from . import blueprint_city
