@@ -7,4 +7,6 @@ blueprint_city = Blueprint('blueprint_city',
                            template_folder='../templates/city')
 
 from . import doctor_views
+from . import region_views
+from . import time_views
 
