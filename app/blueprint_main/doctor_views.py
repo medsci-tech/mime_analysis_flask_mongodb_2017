@@ -11,7 +11,7 @@ def index():
     register_count = Doctor.objects.count()
     authorize_count = Doctor.objects(__raw__={'id_num': {'$exists': True}}).count()
     ret = {'register_count': register_count, 'authorize_count': authorize_count,}
-    render_template('main/main.html', statistic_info=ret)
+    render_template('main/main.html', ret=ret)
 
 
 @blueprint_main.route('/titles/', methods=['GET', 'POST'])
