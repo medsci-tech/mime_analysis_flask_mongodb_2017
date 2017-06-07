@@ -18,7 +18,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         session['user_phone'] = form.phone.data
-        return redirect(url_for('blueprint_time.index'))
+        return redirect(url_for('blueprint_main.index'))
 
     return render_template('auth/login.html', form=form)
 

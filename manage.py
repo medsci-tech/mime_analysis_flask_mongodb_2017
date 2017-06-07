@@ -22,7 +22,7 @@ def check_user():
 @app.route('/')
 @app.route('/index/')
 def index():
-    return redirect(url_for('blueprint_time.index'))
+    return redirect(url_for('blueprint_main.index'))
 
 
 if __name__ == "__main__":
