@@ -16,48 +16,48 @@ def index():
 
 @blueprint_main.route('/titles/', methods=['GET', 'POST'])
 def titles():
-    group_region_doc = {'$group': {
+    group_doc = {'$group': {
         '_id': {'doctor_title': '$doctor_title'},
         'count': {'$sum': 1}}}
-    project_region_doc = {'$project': {
+    project_doc = {'$project': {
         'doctor_title': '$_id.doctor_title',
         'count': 1,
         '_id': 0}}
     aggregate_list = list()
-    aggregate_list.append(group_region_doc)
-    aggregate_list.append(project_region_doc)
+    aggregate_list.append(group_doc)
+    aggregate_list.append(project_doc)
     ret = Doctor.objects().aggrate(*aggregate_list)
     return json.dumps(ret)
 
 
 @blueprint_main.route('/offices/', methods=['GET', 'POST'])
 def offices():
-    group_region_doc = {'$group': {
+    group_doc = {'$group': {
         '_id': {'doctor_office': '$doctor_office'},
         'count': {'$sum': 1}}}
-    project_region_doc = {'$project': {
+    project_doc = {'$project': {
         'doctor_office': '$_id.doctor_office',
         'count': 1,
         '_id': 0}}
     aggregate_list = list()
-    aggregate_list.append(group_region_doc)
-    aggregate_list.append(project_region_doc)
+    aggregate_list.append(group_doc)
+    aggregate_list.append(project_doc)
     ret = Doctor.objects().aggrate(*aggregate_list)
     return json.dumps(ret)
 
 
 @blueprint_main.route('/age_groups/', methods=['GET', 'POST'])
 def age_groups():
-    group_region_doc = {'$group': {
+    group_doc = {'$group': {
         '_id': {'age_group': '$age_group'},
         'count': {'$sum': 1}}}
-    project_region_doc = {'$project': {
+    project_doc = {'$project': {
         'age_group': '$_id.age_group',
         'count': 1,
         '_id': 0}}
     aggregate_list = list()
-    aggregate_list.append(group_region_doc)
-    aggregate_list.append(project_region_doc)
+    aggregate_list.append(group_doc)
+    aggregate_list.append(project_doc)
     ret = Doctor.objects().aggrate(*aggregate_list)
     return json.dumps(ret)
 

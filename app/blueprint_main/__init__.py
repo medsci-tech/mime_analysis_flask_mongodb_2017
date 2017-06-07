@@ -6,5 +6,6 @@ blueprint_main = Blueprint('blueprint_main',
                            template_folder='../templates/main')
 
 from . import doctor_views
-from . import city_views
+from . import region_views
+from . import time_views
 
