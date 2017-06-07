@@ -6,5 +6,5 @@ blueprint_city = Blueprint('blueprint_city',
                            url_prefix='/city',
                            template_folder='../templates/city')
 
-from . import views
+from . import doctor_views
 
