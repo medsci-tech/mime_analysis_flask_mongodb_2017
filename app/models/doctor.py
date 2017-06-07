@@ -19,7 +19,9 @@ class Doctor(mongodb.DynamicDocument):
 
     doctor_title = mongodb.StringField(required=False)
     doctor_office = mongodb.StringField(required=False)
-    hospital = mongodb.ReferenceField(Hospital)
+
+    hospital_name = mongodb.StringField(required=False)
+    hospital_level = mongodb.StringField(required=False)
 
     meta = {'collection': 'doctors'}
 
