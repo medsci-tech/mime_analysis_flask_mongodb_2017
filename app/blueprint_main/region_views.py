@@ -12,7 +12,7 @@ def regions():
                 'latitude': '$latitude'},
         'count': {'$sum': '$register_count'}}}
     project_region_doc = {'$project': {
-        'role': '$_id.city',
+        'city': '$_id.city',
         'longitude': '$_id.longitude',
         'latitude': '$_id.latitude',
         'count': 1,
