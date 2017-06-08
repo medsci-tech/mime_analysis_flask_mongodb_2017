@@ -10,6 +10,6 @@ from .city_statistic import CityStatistic
 
 from .open_class_unit import OpenClassUnit
 from .open_class import OpenClass
-from .open_class_unit_log import OpenClassUnitLog
-from .open_class_log import OpenClassLog
+
+from .live_show import LiveShow
 

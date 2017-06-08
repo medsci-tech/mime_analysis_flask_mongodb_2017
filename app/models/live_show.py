@@ -1,7 +1,9 @@
 from . import mongodb
+from . import Doctor
 
 
 class LiveShow(mongodb.Document):
+    doctor = mongodb.ReferenceField(Doctor)
     show_name = mongodb.StringField()
     show_type = mongodb.StringField()
     show_length = mongodb.IntField()

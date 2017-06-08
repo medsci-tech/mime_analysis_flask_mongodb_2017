@@ -7,14 +7,18 @@ class OpenClassUnit(mongodb.Document):
     hard_level = mongodb.StringField()
     interest_label_list = mongodb.ListField(mongodb.StringField())
 
+    year = mongodb.IntField()
+    month = mongodb.IntField()
+    day = mongodb.IntField()
+
     visit_count = mongodb.IntField()
     display_count = mongodb.IntField()
     consultation_count = mongodb.IntField()
-    class_comment_count = mongodb.IntField()
-    score_count = mongodb.IntField()
-    purchase_count = mongodb.IntField()
+    comment_count = mongodb.IntField()
+    # no score.
+    order_count = mongodb.IntField()
     income_amount = mongodb.DecimalField()
-    class_handout_download_count = mongodb.IntField()
+    ppt_download_count = mongodb.IntField()
 
     meta = {'collection': 'open_class_units'}
 
