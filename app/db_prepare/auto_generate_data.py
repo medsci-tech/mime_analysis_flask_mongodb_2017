@@ -1,21 +1,9 @@
-import numpy as np
 from app.models import Doctor
 from app.models import CityStatistic
 import random
 import datetime
-from flask_mongoengine import MongoEngine
-from flask import Flask
-from app.config import configs
-import pymongo
 from pymongo import MongoClient
-import json
 
-'''
-mongodb = MongoEngine()
-app = Flask(__name__)
-app.config.from_object(configs['development'])
-mongodb.init_app(app)
-'''
 
 
 def getEveryDay(begin_date='2016-01-01', end_date='2017-06-07'):
@@ -73,14 +61,6 @@ def getRandomName():
                    '超', '负', '勒', '杂', '醒', '洗', '采', '']
     name = random.choice(a1) + random.choice(a2) + random.choice(a3)
     return name
-
-
-def test():
-    str='丹阳医院, 南通大学附属丹阳医院, 三级, 江苏, 镇江, 119.450000, 32.200000'
-    hospital = str.strip().split(',')
-    if len(hospital) > 6:
-        hospital = hospital[1:]
-    print(hospital)
 
 
 def init_doctor_data():
