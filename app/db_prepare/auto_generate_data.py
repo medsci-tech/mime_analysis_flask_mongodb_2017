@@ -6,7 +6,7 @@ from pymongo import MongoClient
 
 
 
-def getEveryDay(begin_date='2016-01-01', end_date='2017-06-07'):
+def get_every_day(begin_date='2016-01-01', end_date='2017-06-07'):
     date_list = []
     begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d")
     end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
@@ -17,7 +17,7 @@ def getEveryDay(begin_date='2016-01-01', end_date='2017-06-07'):
     return date_list
 
 
-def loadHospital():
+def load_hospital():
     hospital_list = []
     with open('hospital_all_info_3.csv', 'r', encoding='utf-8') as f:
         data = f.readlines()
@@ -29,7 +29,7 @@ def loadHospital():
     return hospital_list
 
 
-def loadRegion():
+def load_region():
     region_list = []
     with open('region_info.csv', 'r', encoding='utf-8') as f:
         data = f.readlines()
@@ -39,7 +39,7 @@ def loadRegion():
     return region_list
 
 
-def getRandomName():
+def get_random_name():
     a1 = ['赵', '钱', '孙', '李', '周', '吴', '郑', '王', '冯', '陈', '褚', '卫', '蒋', '沈', '韩', '杨', '朱', '秦', '尤', '许']
     a2 = ['理', '尔', '点', '文', '几', '定', '本', '公', '特', '做', '外', '孩', '相', '西', '果', '走',
                    '将', '月', '十', '实', '向', '声', '车', '全', '信', '重', '三', '机', '工', '物', '气', '每', '并', '别', '真', '打',
@@ -71,12 +71,12 @@ def init_doctor_data():
     age_group_list = ['小于18岁', '18-30岁', '31-35岁', '41-45岁', '46-50岁', '51-55岁', '56-60岁', '60岁以上']
     doctor_office_list = ['糖尿病科', '内分泌科', '风湿科', '甲乳外科', '甲状腺外科', '综合内科', '全科']
     doctor_title_list = ['住院医师', '主治医师', '副主任医师', '主任医师']
-    hospital_list = loadHospital()
-    date_list = getEveryDay()
+    hospital_list = load_hospital()
+    date_list = get_every_day()
     doctor_index = 0
     while (doctor_index < 1000):
         doctor = Doctor()
-        doctor.name = getRandomName()
+        doctor.name = get_random_name()
         doctor.age_group = random.choice(age_group_list)
         doctor.disease_list = random.sample(disease_list, random.choice(range(1, len(disease_list), 1)))
         doctor.doctor_office = random.choice(doctor_office_list)
@@ -111,8 +111,8 @@ def init_city_statistic_data():
     client = MongoClient('mongodb://localhost:27017/')
     db = client['development_mongodb']
     #generate data
-    date_list = getEveryDay()
-    region_list = loadRegion()
+    date_list = get_every_day()
+    region_list = load_region()
     for every_date in date_list:
         now_date = datetime.datetime.strptime(every_date, "%Y-%m-%d")
         for every_region in region_list:
