@@ -1,5 +1,4 @@
 from . import mongodb
-from . import Hospital
 
 
 class Doctor(mongodb.DynamicDocument):
