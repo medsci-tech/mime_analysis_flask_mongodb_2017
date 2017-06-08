@@ -99,7 +99,7 @@ def init_doctor_data():
 
         doctor_json = {'doctor_name': doctor.name,'age_group': doctor.age_group, 'disease_list': doctor.disease_list,
                        'doctor_office': doctor.doctor_office, 'doctor_title': doctor.doctor_title,
-                       'phone':doctor.phone,'':doctor.register_year,'':doctor.register_month,'':doctor.register_day,
+                       'phone':doctor.phone,'register_year':doctor.register_year,'register_month':doctor.register_month,'register_day':doctor.register_day,
                        'hospital_name':doctor.hospital_name,'hospital_level':doctor.hospital_level,'province':doctor.province,
                        'city':doctor.city,'longitude':doctor.longitude,'latitude':doctor.latitude
                        }
