@@ -18,5 +18,5 @@ class LiveShow(mongodb.Document):
     comment_count = mongodb.IntField()
     score_count = mongodb.IntField()
 
-    meta = {'collection': 'live_show'}
+    meta = {'collection': 'live_shows'}
 
