@@ -13,6 +13,7 @@ class OpenClassUnitLog(mongodb.Document):
     display_count = mongodb.IntField()
     consultation_count = mongodb.IntField()
     class_comment_count = mongodb.IntField()
+    # no score.
     purchase_count = mongodb.IntField()
     income_amount = mongodb.DecimalField()
     class_handout_download_count = mongodb.IntField()
