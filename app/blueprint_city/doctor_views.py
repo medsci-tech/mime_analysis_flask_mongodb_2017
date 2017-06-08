@@ -12,7 +12,7 @@ def index(province):
     register_count = CityStatistic.objects(province=province).sum('register_count')
     authorize_count = CityStatistic.objects(province=province).sum('authorize_count')
     ret = {'register_count': register_count, 'authorize_count': authorize_count,}
-    render_template('city/city.html', ret=ret)
+    return render_template('city/city.html', ret=ret)
 
 
 @blueprint_city.route('/titles/<string:province>', methods=['GET', 'POST'])

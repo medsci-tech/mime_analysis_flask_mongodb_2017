@@ -23,8 +23,8 @@ def months(year=datetime.datetime.now().year):
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
     ret = CityStatistic.objects().aggregate(*aggregate_list)
-
-    return json.dumps(ret)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_main.route('/days/<int:year>/<int:month>', methods=['GET', 'POST'])
@@ -45,6 +45,6 @@ def days(year=datetime.datetime.now().year, month=datetime.datetime.now().month)
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
     ret = CityStatistic.objects().aggregate(*aggregate_list)
-
-    return json.dumps(ret)
+    print(list(ret))
+    return json.dumps(list(ret))
 

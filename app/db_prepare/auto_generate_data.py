@@ -5,7 +5,6 @@ import datetime
 from pymongo import MongoClient
 
 
-
 def getEveryDay(begin_date='2016-01-01', end_date='2017-06-07'):
     date_list = []
     begin_date = datetime.datetime.strptime(begin_date, "%Y-%m-%d")

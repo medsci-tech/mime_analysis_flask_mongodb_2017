@@ -8,5 +8,5 @@ from ..models import Doctor
 @blueprint_open_class.route('/')
 @blueprint_open_class.route('/index/')
 def index():
-    render_template('open_class/main.html')
+    return render_template('open_class/main.html')
 

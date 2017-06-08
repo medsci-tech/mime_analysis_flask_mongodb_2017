@@ -20,6 +20,7 @@ def regions():
     aggregate_list = list()
     aggregate_list.append(group_region_doc)
     aggregate_list.append(project_region_doc)
-    ret = CityStatistic.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = CityStatistic.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 

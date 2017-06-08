@@ -11,7 +11,8 @@ def index():
     register_count = Doctor.objects.count()
     authorize_count = Doctor.objects(__raw__={'id_num': {'$exists': True}}).count()
     ret = {'register_count': register_count, 'authorize_count': authorize_count,}
-    render_template('main/main.html', ret=ret)
+    print(ret)
+    return render_template('main/index.html', ret=ret)
 
 
 @blueprint_main.route('/titles/', methods=['GET', 'POST'])
@@ -26,8 +27,9 @@ def titles():
     aggregate_list = list()
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_main.route('/offices/', methods=['GET', 'POST'])
@@ -42,8 +44,9 @@ def offices():
     aggregate_list = list()
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_main.route('/age_groups/', methods=['GET', 'POST'])
@@ -58,6 +61,7 @@ def age_groups():
     aggregate_list = list()
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
