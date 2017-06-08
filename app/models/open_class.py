@@ -5,6 +5,7 @@ class OpenClass(mongodb.Document):
     unit_name = mongodb.StringField()
     class_name = mongodb.StringField()
     disease_label = mongodb.StringField()
+    hard_level = mongodb.StringField()
     interest_label_list = mongodb.ListField(mongodb.StringField())
 
     visit_count = mongodb.IntField()
