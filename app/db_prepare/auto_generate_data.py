@@ -139,7 +139,7 @@ def init_city_statistic_data():
             print(city_statistic_json)
             db.city_statistics.insert_one(city_statistic_json)
 
-
-#init_doctor_data()
+#doctor data
+init_doctor_data()
+#city_statistic_data
 init_city_statistic_data()
-#test()
