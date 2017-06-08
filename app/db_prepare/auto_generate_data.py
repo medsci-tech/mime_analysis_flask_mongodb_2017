@@ -117,9 +117,9 @@ def init_city_statistic_data():
         for every_region in region_list:
             city_statistic = CityStatistic()
             #date
-            city_statistic.register_year = now_date.year
-            city_statistic.register_month = now_date.month
-            city_statistic.register_day = now_date.day
+            city_statistic.year = now_date.year
+            city_statistic.month = now_date.month
+            city_statistic.day = now_date.day
             #region
             city_statistic.province = every_region[0]
             city_statistic.city = every_region[1]
@@ -129,8 +129,8 @@ def init_city_statistic_data():
             city_statistic.register_count = random.randint(0, 200)
             city_statistic.authorize_count = random.randint(0, 80)
 
-            city_statistic_json = {'register_year': city_statistic.register_year, 'register_month': city_statistic.register_month,
-                           'register_day': city_statistic.register_day,
+            city_statistic_json = {'year': city_statistic.year, 'month': city_statistic.month,
+                           'day': city_statistic.day,
                            'register_count': city_statistic.register_count, 'authorize_count': city_statistic.authorize_count,
                            'province': city_statistic.province,
                            'city': city_statistic.city, 'longitude': city_statistic.longitude, 'latitude': city_statistic.latitude
