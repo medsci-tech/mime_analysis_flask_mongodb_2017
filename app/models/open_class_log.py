@@ -12,7 +12,6 @@ class OpenClassLog(mongodb.Document):
     visit_count = mongodb.IntField()
     display_count = mongodb.IntField()
     comment_count = mongodb.IntField()
-    score_count = mongodb.IntField()
     handout_download_count = mongodb.IntField()
 
     meta = {'collection': 'open_class_logs'}
