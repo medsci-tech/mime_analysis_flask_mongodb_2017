@@ -23,8 +23,9 @@ def regions(province):
     aggregate_list.append(match_doc)
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = CityStatistic.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = CityStatistic.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_city.route('/cities/<string:province>', methods=['GET', 'POST'])
@@ -45,8 +46,9 @@ def cities(province):
     aggregate_list.append(project_doc)
     aggregate_list.append(sort_doc)
     aggregate_list.append(limit_doc)
-    ret = CityStatistic.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = CityStatistic.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_city.route('/hospitals/<string:province>', methods=['GET', 'POST'])
@@ -67,10 +69,7 @@ def hospitals(province):
     aggregate_list.append(project_doc)
     aggregate_list.append(sort_doc)
     aggregate_list.append(limit_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
-
-
-
-
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 

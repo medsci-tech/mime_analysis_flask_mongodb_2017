@@ -12,7 +12,8 @@ def index(province):
     register_count = CityStatistic.objects(province=province).sum('register_count')
     authorize_count = CityStatistic.objects(province=province).sum('authorize_count')
     ret = {'register_count': register_count, 'authorize_count': authorize_count,}
-    return render_template('city/city.html', ret=ret)
+    print(list(ret))
+    return render_template('city/index.html', ret=ret)
 
 
 @blueprint_city.route('/titles/<string:province>', methods=['GET', 'POST'])
@@ -29,8 +30,9 @@ def titles(province):
     aggregate_list.append(match_doc)
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_city.route('/offices/<string:province>', methods=['GET', 'POST'])
@@ -47,8 +49,9 @@ def offices(province):
     aggregate_list.append(match_doc)
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
 
 @blueprint_city.route('/age_groups/<string:province>', methods=['GET', 'POST'])
@@ -65,6 +68,7 @@ def age_groups(province):
     aggregate_list.append(match_doc)
     aggregate_list.append(group_doc)
     aggregate_list.append(project_doc)
-    ret = Doctor.objects().aggrate(*aggregate_list)
-    return json.dumps(ret)
+    ret = Doctor.objects().aggregate(*aggregate_list)
+    print(list(ret))
+    return json.dumps(list(ret))
 
