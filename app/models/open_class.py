@@ -1,7 +1,10 @@
 from . import mongodb
+from . import Doctor
 
 
 class OpenClass(mongodb.Document):
+    doctor = mongodb.ReferenceField(Doctor)
+
     unit_name = mongodb.StringField()
     class_name = mongodb.StringField()
     disease_label = mongodb.StringField()
