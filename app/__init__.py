@@ -9,6 +9,7 @@ from .blueprint_main import blueprint_main
 from .blueprint_city import blueprint_city
 from .blueprint_open_class import blueprint_open_class
 from .blueprint_live_show import blueprint_live_show
+from .blueprint_social_circle import blueprint_social_circle
 
 
 def create_app(config_name):
@@ -25,6 +26,7 @@ def create_app(config_name):
     app.register_blueprint(blueprint_city)
     app.register_blueprint(blueprint_open_class)
     app.register_blueprint(blueprint_live_show)
+    app.register_blueprint(blueprint_social_circle)
 
     return app
 
